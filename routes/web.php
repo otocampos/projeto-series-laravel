@@ -16,8 +16,16 @@ Route::get('/', function () {
 });
 
 
-Route::get('/series','seriesController@index');
-Route::get('/series/criar', 'SeriesController@criar');
-Route::post('/series/criar', 'SeriesController@store');
-Route::delete('/series/{id}', 'SeriesController@destroy');
+Route::get('/series','seriesController@index')
+->name('listar_series');
 
+Route::get('/series/criar', 'SeriesController@criar')
+->name('form_criar_serie');
+
+Route::post('/series/criar', 'SeriesController@store')
+->name('criar_serie');
+
+Route::delete('/series/{id}', 'SeriesController@destroy')
+->name('deletar_serie');
+
+Route::get('/series/{serieId}/temporadas','TemporadasController@index');

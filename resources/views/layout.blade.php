@@ -9,10 +9,17 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+        <script src="https://kit.fontawesome.com/fe788d2413.js" crossorigin="anonymous"></script>
+
     <div class="container">
         <div class="jumbotron">
             <h1>@yield('cabecalho')</h1>    
     </div>
+    @if(!empty($mensagem))
+<div class="alert alert-success" role="alert">
+{{$mensagem}}
+</div>
+@endif
        @yield('conteudo')
     </div>
 </body>
